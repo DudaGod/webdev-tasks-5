@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="{{ meta.charset }}">
+        <meta name="description" content="{{ meta.description }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ page.title }}</title>
+
+        {{#if isProd}}
+            <link rel="stylesheet" href="surge.sh/static/bundle.css">
+        {{else}}
+            <link rel="stylesheet" href="/static/bundle.css">
+        {{/if}}
+    </head>
+    <body>
+        <div id="root">
+            Пожалуйста, подождите...
+        </div>
+
+        {{#if isProd}}
+            <script src="surge.sh/static/bundle.js"></script>
+        {{else}}
+            <script src="/static/bundle.js"></script>
+        {{/if}}
+    </body>
+</html>
